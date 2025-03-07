@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div id="todo-board" class="board">
+        <h4>Todo</h4>
+        <div draggable="true" class="item">
+            <p>Learn React</p>
+            <div class="itemd">
+                <div class="del-but button"><img src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png"></div>
+                <div class="del-but button"><img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vector-icons-4/edit-flwwwz417de3u3nzvstgpu.png/edit-qtep4ftgzlsz4sl22a43m9.png?_a=DAJFJtWIZAAC"></div>
+            </div>
+        </div>
+        <div draggable="true" class="item">
+            <p>Learn Javascript</p>
+            <div class="itemd">
+            <div class="del-but button"><img src="https://cdn-icons-png.flaticon.com/512/3405/3405244.png"></div>
+            <div class="del-but button"><img src="https://assets.streamlinehq.com/image/private/w_300,h_300,ar_1/f_auto/v1/icons/vector-icons-4/edit-flwwwz417de3u3nzvstgpu.png/edit-qtep4ftgzlsz4sl22a43m9.png?_a=DAJFJtWIZAAC"></div>
+            </div>
+        </div>
+      </div>
+    
+      <div id="progress-board" class="board">
+        <h4>In Progress</h4>
+      </div>
+      <div id="done-board" class="board">
+        <h4>Done</h4>
+      </div>
+    </div>
+    <div class="itemd">
+        <button id="add-task-btn" class="button" >Add Task</button>
+        <button id="add-task-btn" class="button">Add Board</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
