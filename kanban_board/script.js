@@ -38,7 +38,7 @@ function renderItem(input,board) {
     item.getElementsByTagName('img')[0].setAttribute('src',"https://cdn-icons-png.flaticon.com/512/3405/3405244.png");
     item.classList.add('del-but','button');
     item.addEventListener('click',()=>{
-        item.parentElement.parentElement.removeChild(item.parentElement);
+        item.parentElement.parentElement.parentElement.removeChild(item.parentElement.parentElement);
     });
     
     task2.appendChild(document.createElement('div'));
@@ -52,7 +52,7 @@ function renderItem(input,board) {
             taskCard.getElementsByTagName('p')[0].innerText=inp;
         }
     });
-
+    
     taskCard.appendChild(task2);
     attachDragEvents(taskCard);
     
@@ -86,17 +86,23 @@ addTaskBtn.addEventListener('click', () => {
 allItems.forEach((item) => {
     attachDragEvents(item);
     item.getElementsByClassName('del-but')[0].addEventListener('click',(e)=>{
-      item.parentElement.removeChild(item);
+        item.parentElement.removeChild(item);
+    });
+    item.getElementsByClassName('del-but')[1].addEventListener('click',(e)=>{
+        const inp=prompt("enter new task title");
+            if(inp!=""){
+                item.getElementsByTagName('p')[0].innerText=inp;
+            }
     });
 });
 
 function eventLisKBKC(){
     allBoards.forEach((board) => {
         // console.log(board,board.childNodes.length)
-        console.log("chal ra bsdk")
+        // console.log("chal ra bsdk")
             board.addEventListener('dragover', (e) => {
                 if(e.target===e.currentTarget)
-                dragOverBoard(board);
+                    dragOverBoard(board);
             });
     });
 }
