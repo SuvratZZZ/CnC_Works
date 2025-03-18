@@ -110,3 +110,13 @@ document.getElementById('add-pic-btn').addEventListener('click',()=>{
     get_img();
 });
 
+document.getElementById('copy-btn').addEventListener('click',()=>{
+    navigator.clipboard.writeText(document.getElementsByClassName('tex')[0].innerText);
+});
+
+document.getElementById('share-btn').addEventListener('click',()=>{
+    let text = document.getElementsByClassName('tex')[0].innerText;
+    text += document.getElementsByClassName('texr')[0].innerText;
+    // console.log(text);
+    window.open('https://twitter.com/intent/tweet?text='+text);
+});
